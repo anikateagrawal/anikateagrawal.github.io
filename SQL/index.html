@@ -4,99 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SQL & Databases - Beginner Coders Paradise</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6949314281130290"
-     crossorigin="anonymous"></script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%' y1='100%' x2='100%' y2='0%'><stop offset='0%' stop-color='%234f46e5'/><stop offset='100%' stop-color='%2322d3ee'/></linearGradient></defs><rect width='100' height='100' rx='25' fill='url(%23g)'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='900' font-size='65'>A</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col antialiased">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased transition-colors duration-200">
 
-  <!-- GLOBAL NAV BAR -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="../index.html" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center font-black text-white text-xl">BCP</div>
-          <span class="font-bold text-lg text-white">Beginner Coders Paradise</span>
+        <a href="../index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center font-black text-white text-xl shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">A</div>
+          <div class="flex flex-col">
+            <span class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">Beginner Coders Paradise</span>
+            <span class="text-[10px] text-indigo-500 dark:text-indigo-400 font-mono -mt-1 uppercase">Learn • Practice • Crack</span>
+          </div>
         </a>
 
-        <nav class="hidden md:flex items-center space-x-1">
-          <a href="../index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Home</a>
-          <a href="../DSA/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">DSA</a>
-          <a href="../Aptitude/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Aptitude</a>
-          <a href="../WebDev/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Web Development</a>
-          <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-indigo-400 bg-slate-800">SQL</a>
-          <a href="../Communication/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Communication</a>
-        </nav>
-
-        <button id="mobile-menu-btn" class="md:hidden text-slate-400 p-2"><i class="fa-solid fa-bars text-xl"></i></button>
+        <div class="flex items-center gap-4">
+          <nav class="hidden md:flex items-center space-x-1">
+            <a href="../index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+            <a href="../DSA/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">DSA</a>
+            <a href="../Aptitude/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Aptitude</a>
+            <a href="../WebDev/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Web Development</a>
+            <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-slate-800">SQL</a>
+            <a href="../Communication/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Communication</a>
+          </nav>
+          <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
+            <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
+          </button>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="flex-grow py-10 max-w-7xl mx-auto px-4 w-full">
-    
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-      <div>
-        <h1 class="text-3xl font-extrabold text-white flex items-center gap-3">
-          <i class="fa-solid fa-database text-amber-400"></i> Enterprise SQL & Relational Databases
-        </h1>
-        <p class="text-slate-400 text-sm mt-1">Design database schemas, optimize queries, and master relational operators.</p>
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full space-y-8">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 rounded-2xl shadow-sm">
+      <div class="space-y-2">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold border border-amber-500/20">
+          <i class="fa-solid fa-database"></i> Database Domain
+        </div>
+        <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">SQL & Relational Databases</h1>
+        <p class="text-slate-600 dark:text-slate-400 text-sm max-w-2xl">SQL queries, JOINs, indexing, ACID properties, window functions, and DBMS interview concepts.</p>
       </div>
-      
-      <div class="flex items-center gap-2 bg-slate-900 p-2 rounded-xl border border-slate-800">
-        <label for="subject-switch" class="text-xs text-slate-400 pl-2 font-medium">Switch Domain:</label>
-        <select id="subject-switch" onchange="window.location.href=this.value" class="bg-slate-950 text-slate-200 text-sm rounded-lg px-3 py-1.5 border border-slate-700 cursor-pointer">
-          <option value="../DSA/index.html">DSA</option>
-          <option value="../Aptitude/index.html">Aptitude</option>
+
+      <div class="max-w-xl mx-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl shadow-sm space-y-2">
+        <!-- LABEL OUTSIDE -->
+        <label for="main-domain-select" class="block text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+          Switch Domain
+        </label>
+        <select id="main-domain-select" onchange="if(this.value) window.location.href=this.value;" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-sm rounded-xl px-4 py-3 font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer">
+          <option value="" disabled selected>-- Select a Domain to Navigate --</option>
+          <option value="../DSA/index.html">Data Structures & Algorithms (DSA)</option>
+          <option value="../Aptitude/index.html">Aptitude & Reasoning</option>
           <option value="../WebDev/index.html">Web Development</option>
-          <option value="index.html" selected>SQL</option>
-          <option value="../Communication/index.html">Communication</option>
+          <option value="../SQL/index.html">Database & SQL</option>
+          <option value="../Communication/index.html">Soft Skills & HR Communication</option>
         </select>
       </div>
     </div>
 
-    <!-- TOPIC CARDS GRID -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/40 transition-all">
-        <div>
-          <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Module 01</span>
-          <h3 class="text-xl font-bold text-white mt-2 mb-2">Relational DB Basics</h3>
-          <p class="text-slate-400 text-xs mb-6">DDL, DML, DCL commands, table creation, and primary/foreign keys.</p>
+      <a href="Joins/index.html" class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 p-6 rounded-2xl transition-all shadow-sm hover:shadow-amber-500/10 space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono font-bold text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/50 px-2.5 py-1 rounded-lg">Module 01</span>
+          <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-amber-500 group-hover:translate-x-1 transition-all"></i>
         </div>
-        <a href="#" class="w-full py-2.5 rounded-xl bg-slate-800 text-slate-400 text-center text-xs font-semibold">Coming Soon</a>
-      </div>
-
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/40 transition-all">
         <div>
-          <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Module 02</span>
-          <h3 class="text-xl font-bold text-white mt-2 mb-2">Joins & Subqueries</h3>
-          <p class="text-slate-400 text-xs mb-6">INNER, LEFT, RIGHT, FULL OUTER joins, and correlated subqueries.</p>
+          <h3 class="text-base font-bold text-slate-900 dark:text-white group-hover:text-amber-500 transition-colors">SQL Joins & Aggregates</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">INNER, LEFT, RIGHT, FULL OUTER joins and GROUP BY queries.</p>
         </div>
-        <a href="Joins/index.html" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-center text-xs font-semibold transition-all">
-          Explore SQL Joins
-        </a>
-      </div>
-
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/40 transition-all">
-        <div>
-          <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">Module 03</span>
-          <h3 class="text-xl font-bold text-white mt-2 mb-2">Indexing & Optimization</h3>
-          <p class="text-slate-400 text-xs mb-6">Query Execution Plans, B-Trees, 1NF-3NF normalization, and indexing tuning.</p>
-        </div>
-        <a href="#" class="w-full py-2.5 rounded-xl bg-slate-800 text-slate-400 text-center text-xs font-semibold">Coming Soon</a>
-      </div>
-
+      </a>
     </div>
   </main>
 
-  <!-- GLOBAL FOOTER -->
-  <footer class="bg-slate-950 border-t border-slate-800 py-6 px-4 mt-auto">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+  <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-6 px-4 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4">
       <span>© Copyright Anikate Agrawal</span>
-      <a href="../index.html" class="text-indigo-400 hover:text-indigo-300 font-medium">Return to Home Page</a>
+      <a href="../index.html" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Return to Home Page</a>
     </div>
   </footer>
+
+  <script>
+    const themeBtn = document.getElementById('theme-toggle');
+    if (localStorage.getItem('theme') === 'light') document.documentElement.classList.remove('dark');
+    else document.documentElement.classList.add('dark');
+    themeBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>

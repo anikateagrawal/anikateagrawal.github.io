@@ -3,217 +3,474 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arrays & Vectors - Beginner Coders Paradise</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6949314281130290"
-     crossorigin="anonymous"></script>
+  <title>Arrays - Beginner Coders Paradise</title>
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col antialiased">
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans min-h-screen flex flex-col antialiased transition-colors duration-200">
 
-  <!-- GLOBAL NAV BAR -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+  <!-- 1. GLOBAL NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-950/80 border-b border-slate-200 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="../../index.html" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center font-black text-white text-xl">BCP</div>
-          <span class="font-bold text-lg text-white">Beginner Coders Paradise</span>
+        
+        <!-- Logo with 'A' -->
+        <a href="../../index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center font-black text-white text-xl shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+            A
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">Beginner Coders Paradise</span>
+            <span class="text-[10px] text-indigo-500 dark:text-indigo-400 font-mono -mt-1 uppercase">Learn • Practice • Crack</span>
+          </div>
         </a>
 
-        <nav class="hidden md:flex items-center space-x-1">
-          <a href="../../index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Home</a>
-          <a href="../index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-indigo-400 bg-slate-800">DSA</a>
-          <a href="../../Aptitude/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Aptitude</a>
-          <a href="../../WebDev/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Web Development</a>
-          <a href="../../SQL/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">SQL</a>
-          <a href="../../Communication/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Communication</a>
-        </nav>
+        <!-- Desktop Links & Theme Switcher -->
+        <div class="flex items-center gap-4">
+          <nav class="hidden md:flex items-center space-x-1">
+            <a href="../../index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+            <a href="../index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-slate-800">DSA</a>
+            <a href="../../Aptitude/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Aptitude</a>
+            <a href="../../WebDev/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Web Development</a>
+            <a href="../../SQL/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">SQL</a>
+            <a href="../../Communication/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">Communication</a>
+          </nav>
+
+          <!-- Light / Dark Theme Toggle Button -->
+          <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+            <i class="fa-solid fa-moon hidden dark:inline text-amber-300"></i>
+            <i class="fa-solid fa-sun inline dark:hidden text-amber-500"></i>
+          </button>
+        </div>
+
       </div>
     </div>
   </header>
 
+  <!-- 2. MAIN CONTENT AREA -->
   <main class="flex-grow py-8 max-w-5xl mx-auto px-4 w-full">
     
-    <!-- TOP BREADCRUMB NAV -->
-    <div class="text-xs text-indigo-400 mb-2">
-      <a href="../index.html" class="hover:underline flex items-center gap-1">
+    <!-- Breadcrumb -->
+    <div class="text-xs text-indigo-600 dark:text-indigo-400 mb-2">
+      <a href="../index.html" class="hover:underline flex items-center gap-1 font-medium">
         <i class="fa-solid fa-arrow-left text-[10px]"></i> Back to DSA Modules
       </a>
     </div>
 
-    <!-- TOPIC HEADER -->
+    <!-- Header -->
     <div class="mb-8">
-      <h1 class="text-3xl font-extrabold text-white">Arrays & Vectors</h1>
-      <p class="text-slate-400 text-sm mt-1">Master contiguous memory indexing, two-pointer techniques, dynamic resizing, and sliding windows.</p>
+      <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white">Arrays & Vectors</h1>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mt-1">Master contiguous memory indexing, multi-language solutions, and interview concepts.</p>
     </div>
 
-    <!-- SUB-NAV TAB BAR (STICKY) -->
-    <div class="sticky top-16 z-40 bg-slate-950/95 border-b border-slate-800 mb-8 flex space-x-4">
-      <button onclick="switchTab('questions')" id="tab-questions" class="tab-btn py-3 px-4 font-semibold text-sm border-b-2 border-indigo-500 text-indigo-400 flex items-center gap-2">
-        <i class="fa-solid fa-clipboard-question"></i> Interview Questions
+    <!-- 4 STICKY PRIMARY TABS -->
+    <div class="sticky top-16 z-40 bg-slate-50/95 dark:bg-slate-950/95 border-b border-slate-200 dark:border-slate-800 mb-8 flex space-x-2 sm:space-x-4 overflow-x-auto">
+      <button onclick="switchTab('interview')" id="tab-interview" class="tab-btn py-3 px-3 sm:px-4 font-semibold text-xs sm:text-sm border-b-2 border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400 whitespace-nowrap flex items-center gap-2">
+        <i class="fa-solid fa-comments"></i> Interview Questions
       </button>
-      <button onclick="switchTab('notes')" id="tab-notes" class="tab-btn py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2">
+      <button onclick="switchTab('problems')" id="tab-problems" class="tab-btn py-3 px-3 sm:px-4 font-semibold text-xs sm:text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white whitespace-nowrap flex items-center gap-2">
+        <i class="fa-solid fa-code"></i> Practice Problems
+      </button>
+      <button onclick="switchTab('notes')" id="tab-notes" class="tab-btn py-3 px-3 sm:px-4 font-semibold text-xs sm:text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white whitespace-nowrap flex items-center gap-2">
         <i class="fa-solid fa-file-lines"></i> Slides & Notes
       </button>
-      <button onclick="switchTab('quizzes')" id="tab-quizzes" class="tab-btn py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2">
+      <button onclick="switchTab('quizzes')" id="tab-quizzes" class="tab-btn py-3 px-3 sm:px-4 font-semibold text-xs sm:text-sm border-b-2 border-transparent text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white whitespace-nowrap flex items-center gap-2">
         <i class="fa-solid fa-vial"></i> Quizzes
       </button>
     </div>
 
-    <!-- TAB 1: INTERVIEW QUESTIONS ACCORDION -->
-    <div id="content-questions" class="tab-panel space-y-4">
-      <h3 class="text-lg font-bold text-white mb-2">Frequently Asked Interview Problems</h3>
+
+    <!-- ================================================================= -->
+    <!-- TAB 1: THEORETICAL INTERVIEW QUESTIONS (WITH MULTIPLE SETS)       -->
+    <!-- ================================================================= -->
+    <div id="content-interview" class="tab-panel space-y-6">
       
-      <!-- Question Item 1 -->
-      <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-        <button onclick="toggleAccordion('acc-1')" class="w-full p-4 text-left font-bold text-slate-200 flex justify-between items-center hover:bg-slate-800/50">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Easy</span>
-            <span>1. Two Sum Problem (Target Sum Pair)</span>
+      <!-- Sub-Set Selector -->
+      <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <span class="text-xs font-bold uppercase text-slate-400 mr-2">Select Set:</span>
+        <button id="interview-setbtn-1" onclick="switchSet('interview', 1)" class="set-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Set 1: Basic Theory</button>
+        <button id="interview-setbtn-2" onclick="switchSet('interview', 2)" class="set-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Set 2: Advanced Memory & OS</button>
+      </div>
+
+      <!-- Set 1 Content -->
+      <div id="interview-set-1" class="set-panel space-y-4">
+        
+        <!-- Q1 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+          <button onclick="toggleAccordion('iq-1')" class="w-full p-4 text-left font-bold text-slate-800 dark:text-slate-200 flex justify-between items-center hover:bg-slate-50 dark:hover:bg-slate-800/50">
+            <span>1. What is the difference between a Static Array and a Dynamic Array?</span>
+            <i id="icon-iq-1" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div id="iq-1" class="hidden p-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/60 text-sm text-slate-600 dark:text-slate-300 space-y-2">
+            <p><strong>Static Array:</strong> Allocated on stack/heap with fixed size at compile/runtime. Size cannot be altered after declaration.</p>
+            <p><strong>Dynamic Array (e.g., C++ std::vector, Java ArrayList):</strong> Automatically resizes when full. Usually doubles its capacity (Geometric Growth) to maintain an amortized <strong>O(1)</strong> insertion time complexity.</p>
           </div>
-          <i id="icon-acc-1" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
-        </button>
-        <div id="acc-1" class="hidden p-5 border-t border-slate-800 bg-slate-950/60 text-sm text-slate-300">
-          <p class="mb-4">Given an array of integers <code class="bg-slate-800 px-1 py-0.5 rounded text-indigo-300">nums</code> and an integer <code class="bg-slate-800 px-1 py-0.5 rounded text-indigo-300">target</code>, return indices of the two numbers such that they add up to target.</p>
-          <div class="text-xs font-mono text-indigo-400 mb-1">Optimized Solution (O(n) Time, Hash Map):</div>
-          <pre class="bg-slate-900 p-4 rounded-lg border border-slate-800 text-emerald-400 font-mono text-xs overflow-x-auto">function twoSum(nums, target) {
-  const map = new Map();
-  for (let i = 0; i < nums.length; i++) {
-    const diff = target - nums[i];
-    if (map.has(diff)) return [map.get(diff), i];
-    map.set(nums[i], i);
-  }
-}</pre>
+        </div>
+
+        <!-- Q2 -->
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+          <button onclick="toggleAccordion('iq-2')" class="w-full p-4 text-left font-bold text-slate-800 dark:text-slate-200 flex justify-between items-center hover:bg-slate-50 dark:hover:bg-slate-800/50">
+            <span>2. Why does accessing an element in an array by index take O(1) time?</span>
+            <i id="icon-iq-2" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div id="iq-2" class="hidden p-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/60 text-sm text-slate-600 dark:text-slate-300">
+            <p>Arrays store elements in contiguous memory locations. The address of index <code>i</code> is calculated directly using a mathematical formula:</p>
+            <code class="block bg-slate-900 text-emerald-400 p-3 rounded-lg font-mono text-xs my-2">Address = Base_Address + (Index * Element_Size)</code>
+            <p>Because arithmetic calculation takes constant time regardless of array length, lookup is O(1).</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Set 2 Content -->
+      <div id="interview-set-2" class="set-panel space-y-4 hidden">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm">
+          <button onclick="toggleAccordion('iq-3')" class="w-full p-4 text-left font-bold text-slate-800 dark:text-slate-200 flex justify-between items-center hover:bg-slate-50 dark:hover:bg-slate-800/50">
+            <span>1. What is Cache Locality and why do Arrays perform better than Linked Lists?</span>
+            <i id="icon-iq-3" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+          </button>
+          <div id="iq-3" class="hidden p-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/60 text-sm text-slate-600 dark:text-slate-300">
+            <p>Arrays exhibit high <strong>Spatial Locality</strong>. Because elements lie next to each other in RAM, loading one element loads adjacent elements into CPU L1/L2 caches simultaneously. Linked list nodes are scattered across RAM, causing frequent CPU cache misses.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Question Item 2 -->
-      <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
-        <button onclick="toggleAccordion('acc-2')" class="w-full p-4 text-left font-bold text-slate-200 flex justify-between items-center hover:bg-slate-800/50">
-          <div class="flex items-center gap-3">
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Medium</span>
-            <span>2. Maximum Subarray Sum (Kadane's Algorithm)</span>
-          </div>
-          <i id="icon-acc-2" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
-        </button>
-        <div id="acc-2" class="hidden p-5 border-t border-slate-800 bg-slate-950/60 text-sm text-slate-300">
-          <p class="mb-4">Find the contiguous subarray with the largest sum and return its value.</p>
-          <pre class="bg-slate-900 p-4 rounded-lg border border-slate-800 text-emerald-400 font-mono text-xs overflow-x-auto">function maxSubArray(nums) {
-  let maxSoFar = nums[0], currentMax = nums[0];
-  for (let i = 1; i < nums.length; i++) {
-    currentMax = Math.max(nums[i], currentMax + nums[i]);
-    maxSoFar = Math.max(maxSoFar, currentMax);
-  }
-  return maxSoFar;
-}</pre>
-        </div>
-      </div>
     </div>
 
-    <!-- TAB 2: SLIDES & NOTES -->
+
+    <!-- ================================================================= -->
+    <!-- TAB 2: PRACTICE PROBLEMS (LEETCODE LINKS + JAVA, PYTHON, C++)   -->
+    <!-- ================================================================= -->
+    <div id="content-problems" class="tab-panel hidden space-y-6">
+      
+      <!-- Sub-Set Selector -->
+      <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <span class="text-xs font-bold uppercase text-slate-400 mr-2">Difficulty Set:</span>
+        <button id="problems-setbtn-1" onclick="switchSet('problems', 1)" class="set-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Set 1: Easy & Foundations</button>
+        <button id="problems-setbtn-2" onclick="switchSet('problems', 2)" class="set-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Set 2: Medium Patterns</button>
+      </div>
+
+      <!-- Set 1 Problems -->
+      <div id="problems-set-1" class="set-panel space-y-6">
+        
+        <!-- Problem Card 1 -->
+        <div id="prob-1" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">Easy</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">1. Two Sum</h3>
+            </div>
+            <!-- LeetCode Direct Link -->
+            <a href="https://leetcode.com/problems/two-sum/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-bold border border-amber-500/30 transition-all w-fit">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Solve on LeetCode
+            </a>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-300 text-sm">Given an array of integers <code>nums</code> and an integer <code>target</code>, return indices of the two numbers such that they add up to target.</p>
+
+          <!-- Language Selector -->
+          <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-bold text-slate-400">Solution:</span>
+              <button id="prob-1-btn-cpp" onclick="switchLang('prob-1', 'cpp')" class="lang-btn px-2.5 py-1 rounded text-xs font-bold bg-indigo-600 text-white">C++</button>
+              <button id="prob-1-btn-java" onclick="switchLang('prob-1', 'java')" class="lang-btn px-2.5 py-1 rounded text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Java</button>
+              <button id="prob-1-btn-py" onclick="switchLang('prob-1', 'py')" class="lang-btn px-2.5 py-1 rounded text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</button>
+            </div>
+
+            <!-- Code Blocks -->
+            <pre id="prob-1-code-cpp" class="code-block bg-slate-900 text-emerald-400 p-4 rounded-xl font-mono text-xs overflow-x-auto">
+#include &lt;vector&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+
+vector&lt;int&gt; twoSum(vector&lt;int&gt;& nums, int target) {
+    unordered_map&lt;int, int&gt; mp;
+    for (int i = 0; i &lt; nums.size(); i++) {
+        int diff = target - nums[i];
+        if (mp.count(diff)) return {mp[diff], i};
+        mp[nums[i]] = i;
+    }
+    return {};
+}</pre>
+
+            <pre id="prob-1-code-java" class="code-block bg-slate-900 text-emerald-400 p-4 rounded-xl font-mono text-xs overflow-x-auto hidden">
+import java.util.HashMap;
+
+public int[] twoSum(int[] nums, int target) {
+    HashMap&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();
+    for (int i = 0; i &lt; nums.length; i++) {
+        int diff = target - nums[i];
+        if (map.containsKey(diff)) {
+            return new int[] { map.get(diff), i };
+        }
+        map.put(nums[i], i);
+    }
+    return new int[]{};
+}</pre>
+
+            <pre id="prob-1-code-py" class="code-block bg-slate-900 text-emerald-400 p-4 rounded-xl font-mono text-xs overflow-x-auto hidden">
+def twoSum(nums: list[int], target: int) -&gt; list[int]:
+    seen = {}
+    for i, num in enumerate(nums):
+        diff = target - num
+        if diff in seen:
+            return [seen[diff], i]
+        seen[num] = i
+    return []</pre>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Set 2 Problems -->
+      <div id="problems-set-2" class="set-panel space-y-6 hidden">
+        
+        <!-- Problem Card 2 -->
+        <div id="prob-2" class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">Medium</span>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">2. Maximum Subarray (Kadane's Algorithm)</h3>
+            </div>
+            <a href="https://leetcode.com/problems/maximum-subarray/" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 text-xs font-bold border border-amber-500/30 transition-all w-fit">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Solve on LeetCode
+            </a>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-300 text-sm">Find the contiguous subarray with the largest sum and return its sum.</p>
+
+          <div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-xs font-bold text-slate-400">Solution:</span>
+              <button id="prob-2-btn-cpp" onclick="switchLang('prob-2', 'cpp')" class="lang-btn px-2.5 py-1 rounded text-xs font-bold bg-indigo-600 text-white">C++</button>
+              <button id="prob-2-btn-java" onclick="switchLang('prob-2', 'java')" class="lang-btn px-2.5 py-1 rounded text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Java</button>
+              <button id="prob-2-btn-py" onclick="switchLang('prob-2', 'py')" class="lang-btn px-2.5 py-1 rounded text-xs font-bold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Python</button>
+            </div>
+
+            <pre id="prob-2-code-cpp" class="code-block bg-slate-900 text-emerald-400 p-4 rounded-xl font-mono text-xs overflow-x-auto">
+int maxSubArray(vector&lt;int&gt;& nums) {
+    int maxSoFar = nums[0], current = nums[0];
+    for (size_t i = 1; i &lt; nums.size(); i++) {
+        current = max(nums[i], current + nums[i]);
+        maxSoFar = max(maxSoFar, current);
+    }
+    return maxSoFar;
+}</pre>
+
+            <pre id="prob-2-code-java" class="code-block bg-slate-900 text-emerald-400 p-4 rounded-xl font-mono text-xs overflow-x-auto hidden">
+public int maxSubArray(int[] nums) {
+    int maxSoFar = nums[0], current = nums[0];
+    for (int i = 1; i &lt; nums.length; i++) {
+        current = Math.max(nums[i], current + nums[i]);
+        maxSoFar = Math.max(maxSoFar, current);
+    }
+    return maxSoFar;
+}</pre>
+
+            <pre id="prob-2-code-py" class="code-block bg-slate-900 text-emerald-400 p-4 rounded-xl font-mono text-xs overflow-x-auto hidden">
+def maxSubArray(nums: list[int]) -&gt; int:
+    max_so_far = current = nums[0]
+    for x in nums[1:]:
+        current = max(x, current + x)
+        max_so_far = max(max_so_far, current)
+    return max_so_far</pre>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================================================= -->
+    <!-- TAB 3: SLIDES & NOTES (WITH MULTIPLE SETS)                        -->
+    <!-- ================================================================= -->
     <div id="content-notes" class="tab-panel hidden space-y-6">
-      <div class="flex items-center justify-between bg-slate-900 p-4 rounded-xl border border-slate-800">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-file-pdf text-rose-500 text-2xl"></i>
-          <div>
-            <h4 class="text-sm font-bold text-white">Array Data Structure Notes.pdf</h4>
-            <p class="text-xs text-slate-400">PDF Guide • 1.8 MB</p>
-          </div>
-        </div>
-        <button onclick="alert('Downloading Array Notes PDF...')" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition-colors flex items-center gap-2">
-          <i class="fa-solid fa-download"></i> Download Notes
-        </button>
+      
+      <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <span class="text-xs font-bold uppercase text-slate-400 mr-2">Notes Set:</span>
+        <button id="notes-setbtn-1" onclick="switchSet('notes', 1)" class="set-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Set 1: Visual Notes</button>
+        <button id="notes-setbtn-2" onclick="switchSet('notes', 2)" class="set-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Set 2: Complexity Cheatsheet</button>
       </div>
 
-      <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 space-y-4 text-slate-300 text-sm">
-        <h3 class="text-lg font-bold text-white">Array Complexity Quick Reference</h3>
-        <ul class="list-disc pl-5 space-y-2 text-xs">
-          <li><strong>Access by index:</strong> O(1) constant time complexity.</li>
-          <li><strong>Linear Search:</strong> O(n) worst-case time complexity.</li>
-          <li><strong>Insertion / Deletion:</strong> O(n) because elements must shift positions.</li>
-        </ul>
+      <div id="notes-set-1" class="set-panel space-y-4">
+        <div class="flex items-center justify-between bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-file-pdf text-rose-500 text-3xl"></i>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900 dark:text-white">Array & Vector Operations Complete Guide.pdf</h4>
+              <p class="text-xs text-slate-400">PDF Document • 2.4 MB</p>
+            </div>
+          </div>
+          <button onclick="alert('Downloading PDF Notes...')" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition-colors flex items-center gap-2">
+            <i class="fa-solid fa-download"></i> Download
+          </button>
+        </div>
       </div>
+
+      <div id="notes-set-2" class="set-panel space-y-4 hidden">
+        <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 text-sm text-slate-600 dark:text-slate-300">
+          <h4 class="font-bold text-slate-900 dark:text-white mb-2">Time Complexity Matrix</h4>
+          <ul class="list-disc pl-5 space-y-1 text-xs">
+            <li><strong>Access:</strong> O(1)</li>
+            <li><strong>Search (Unsorted):</strong> O(n)</li>
+            <li><strong>Insertion/Deletion (Middle):</strong> O(n)</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
 
-    <!-- TAB 3: QUIZZES -->
-    <div id="content-quizzes" class="tab-panel hidden max-w-2xl">
-      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-6">
-        <div>
-          <h3 class="text-lg font-bold text-white">Array Fundamentals Assessment</h3>
-          <p class="text-xs text-slate-400">Answer the question below to test your understanding.</p>
-        </div>
 
-        <div class="space-y-3">
-          <p class="text-sm font-semibold text-slate-200">Q: What is the time complexity of looking up an element in an array by its index?</p>
+    <!-- ================================================================= -->
+    <!-- TAB 4: QUIZZES (WITH MULTIPLE SETS)                              -->
+    <!-- ================================================================= -->
+    <div id="content-quizzes" class="tab-panel hidden space-y-6">
+      
+      <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+        <span class="text-xs font-bold uppercase text-slate-400 mr-2">Quiz Set:</span>
+        <button id="quizzes-setbtn-1" onclick="switchSet('quizzes', 1)" class="set-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 text-white">Set 1: Fundamentals</button>
+        <button id="quizzes-setbtn-2" onclick="switchSet('quizzes', 2)" class="set-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Set 2: Advanced</button>
+      </div>
+
+      <div id="quizzes-set-1" class="set-panel max-w-xl">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4 shadow-sm">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">Q1: What happens during Vector reallocation in C++?</h3>
           <div class="space-y-2 text-xs">
-            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:bg-slate-800 cursor-pointer">
-              <input type="radio" name="quiz1" value="correct" class="accent-indigo-500">
-              <span>O(1)</span>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+              <input type="radio" name="q1" value="correct" class="accent-indigo-600">
+              <span>New memory block is allocated, existing elements copied over, old memory freed.</span>
             </label>
-            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:bg-slate-800 cursor-pointer">
-              <input type="radio" name="quiz1" value="wrong" class="accent-indigo-500">
-              <span>O(n)</span>
-            </label>
-            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:bg-slate-800 cursor-pointer">
-              <input type="radio" name="quiz1" value="wrong" class="accent-indigo-500">
-              <span>O(log n)</span>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+              <input type="radio" name="q1" value="wrong" class="accent-indigo-600">
+              <span>Memory is expanded in-place without copying.</span>
             </label>
           </div>
+          <button onclick="checkQuiz('q1', 'quiz-msg-1')" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all">Submit Answer</button>
+          <div id="quiz-msg-1" class="hidden text-xs font-bold text-center p-3 rounded-xl"></div>
         </div>
-
-        <button onclick="checkQuizAnswer()" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-colors">
-          Submit Answer
-        </button>
-
-        <div id="quiz-result" class="hidden text-xs font-bold text-center p-3 rounded-lg"></div>
       </div>
+
+      <div id="quizzes-set-2" class="set-panel max-w-xl hidden">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-2xl space-y-4 shadow-sm">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white">Q2: What is the worst-case space complexity of Kadane's Algorithm?</h3>
+          <div class="space-y-2 text-xs">
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+              <input type="radio" name="q2" value="correct" class="accent-indigo-600">
+              <span>O(1) Auxiliary Space</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+              <input type="radio" name="q2" value="wrong" class="accent-indigo-600">
+              <span>O(N) Space</span>
+            </label>
+          </div>
+          <button onclick="checkQuiz('q2', 'quiz-msg-2')" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-all">Submit Answer</button>
+          <div id="quiz-msg-2" class="hidden text-xs font-bold text-center p-3 rounded-xl"></div>
+        </div>
+      </div>
+
     </div>
 
   </main>
 
-  <!-- GLOBAL FOOTER -->
-  <footer class="bg-slate-950 border-t border-slate-800 py-6 px-4 mt-auto">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+  <!-- 3. GLOBAL FOOTER -->
+  <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-6 px-4 mt-auto transition-colors">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4">
       <span>© Copyright Anikate Agrawal</span>
-      <a href="../../index.html" class="text-indigo-400 hover:text-indigo-300 font-medium">Return to Home Page</a>
+      <a href="../../index.html" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium">Return to Home Page</a>
     </div>
   </footer>
 
+  <!-- 4. INLINE JAVASCRIPT LOGIC -->
   <script>
-    // Tab switching logic
+    // A. Theme Switcher Logic
+    const themeBtn = document.getElementById('theme-toggle');
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+
+    themeBtn.addEventListener('click', () => {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // B. Primary Tab Switcher
     function switchTab(tabId) {
       document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
       document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('border-indigo-500', 'text-indigo-400');
-        btn.classList.add('border-transparent', 'text-slate-400');
+        btn.classList.remove('border-indigo-600', 'text-indigo-600', 'dark:border-indigo-400', 'dark:text-indigo-400');
+        btn.classList.add('border-transparent', 'text-slate-500', 'dark:text-slate-400');
       });
 
       document.getElementById('content-' + tabId).classList.remove('hidden');
       const activeBtn = document.getElementById('tab-' + tabId);
-      activeBtn.classList.add('border-indigo-500', 'text-indigo-400');
-      activeBtn.classList.remove('border-transparent', 'text-slate-400');
+      activeBtn.classList.add('border-indigo-600', 'text-indigo-600', 'dark:border-indigo-400', 'dark:text-indigo-400');
+      activeBtn.classList.remove('border-transparent', 'text-slate-500', 'dark:text-slate-400');
     }
 
-    // Accordion toggle logic
+    // C. Sub-Set Switcher Logic
+    function switchSet(tabName, setId) {
+      const parent = document.getElementById('content-' + tabName);
+      parent.querySelectorAll('.set-panel').forEach(panel => panel.classList.add('hidden'));
+      parent.querySelectorAll('.set-btn').forEach(btn => {
+        btn.classList.remove('bg-indigo-600', 'text-white');
+        btn.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      });
+
+      document.getElementById(`${tabName}-set-${setId}`).classList.remove('hidden');
+      const activeSetBtn = document.getElementById(`${tabName}-setbtn-${setId}`);
+      activeSetBtn.classList.add('bg-indigo-600', 'text-white');
+      activeSetBtn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+    }
+
+    // D. Problem Solution Language Switcher
+    function switchLang(probId, lang) {
+      const card = document.getElementById(probId);
+      card.querySelectorAll('.code-block').forEach(block => block.classList.add('hidden'));
+      card.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('bg-indigo-600', 'text-white');
+        btn.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+      });
+
+      document.getElementById(`${probId}-code-${lang}`).classList.remove('hidden');
+      const activeLangBtn = document.getElementById(`${probId}-btn-${lang}`);
+      activeLangBtn.classList.add('bg-indigo-600', 'text-white');
+      activeLangBtn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+    }
+
+    // E. Accordion Toggle
     function toggleAccordion(id) {
-      const element = document.getElementById(id);
+      const content = document.getElementById(id);
       const icon = document.getElementById('icon-' + id);
-      element.classList.toggle('hidden');
+      content.classList.toggle('hidden');
       icon.classList.toggle('rotate-180');
     }
 
-    // Quiz validation logic
-    function checkQuizAnswer() {
-      const selected = document.querySelector('input[name="quiz1"]:checked');
-      const result = document.getElementById('quiz-result');
-      result.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-400', 'bg-rose-500/10', 'text-rose-400');
-      
+    // F. Quiz Verification
+    function checkQuiz(radioName, resultId) {
+      const selected = document.querySelector(`input[name="${radioName}"]:checked`);
+      const msg = document.getElementById(resultId);
+      msg.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-600', 'bg-rose-500/10', 'text-rose-600');
+
       if (selected && selected.value === 'correct') {
-        result.classList.add('bg-emerald-500/10', 'text-emerald-400');
-        result.textContent = 'Correct! Array indexing is constant time O(1).';
+        msg.classList.add('bg-emerald-500/10', 'text-emerald-600');
+        msg.textContent = 'Correct Answer!';
       } else {
-        result.classList.add('bg-rose-500/10', 'text-rose-400');
-        result.textContent = 'Incorrect. Try again!';
+        msg.classList.add('bg-rose-500/10', 'text-rose-600');
+        msg.textContent = 'Incorrect. Try again!';
       }
     }
   </script>
