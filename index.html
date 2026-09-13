@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beginner Coders Paradise (BCP) - Crack Placements & Master Tech Skills</title>
+  
+  <!-- Tailwind CSS & FontAwesome CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- 1. GLOBAL NAVIGATION BAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 flex items-center justify-center font-black text-white text-xl shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+            BCP
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-lg tracking-tight text-white">Beginner Coders Paradise</span>
+            <span class="text-[10px] text-indigo-400 font-mono -mt-1 uppercase">Learn • Practice • Crack</span>
+          </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <nav class="hidden md:flex items-center space-x-1">
+          <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-indigo-400 bg-slate-800/80">Home</a>
+          <a href="DSA/index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800">DSA</a>
+          <a href="Aptitude/index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800">Aptitude</a>
+          <a href="WebDev/index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800">Web Development</a>
+          <a href="SQL/index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800">SQL</a>
+          <a href="Communication/index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800">Communication</a>
+        </nav>
+
+        <!-- Mobile Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-slate-400 hover:text-white p-2" aria-label="Toggle Navigation Menu">
+            <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-950 px-4 pt-2 pb-4 space-y-1">
+      <a href="index.html" class="block px-3 py-2 rounded-md text-indigo-400 font-medium">Home</a>
+      <a href="DSA/index.html" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">DSA</a>
+      <a href="Aptitude/index.html" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Aptitude</a>
+      <a href="WebDev/index.html" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Web Development</a>
+      <a href="SQL/index.html" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">SQL</a>
+      <a href="Communication/index.html" class="block px-3 py-2 rounded-md text-slate-300 hover:bg-slate-800">Communication</a>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <main class="flex-grow">
+    <section class="py-20 text-center max-w-4xl mx-auto px-4">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-semibold uppercase tracking-wider mb-6">
+        <i class="fa-solid fa-bolt"></i> Ultimate Placement Preparation Portal
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white mb-6 leading-tight">
+        Master Skills, Crack Interviews & <span class="bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">Secure Placements</span>
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+        Your structured learning path to conquer Data Structures, Quantitative Aptitude, Full-Stack Web Development, SQL Databases, and Soft Skills.
+      </p>
+      <a href="DSA/index.html" class="px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-xl shadow-indigo-600/30 transition-all">
+        Start Preparing Now <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+      </a>
+    </section>
+
+    <!-- 3. SUBJECT CATEGORIES GRID -->
+    <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- DSA Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center text-white text-xl mb-4"><i class="fa-solid fa-code-branch"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">Data Structures & Algorithms</h3>
+            <p class="text-slate-400 text-sm mb-6">Master contiguous memory, trees, dynamic programming, and interview patterns.</p>
+          </div>
+          <a href="DSA/index.html" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-center text-xs font-semibold transition-colors">Explore DSA</a>
+        </div>
+
+        <!-- Aptitude Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center text-white text-xl mb-4"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">Aptitude & Reasoning</h3>
+            <p class="text-slate-400 text-sm mb-6">Boost speed and precision for preliminary online assessments (OTs).</p>
+          </div>
+          <a href="Aptitude/index.html" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-center text-xs font-semibold transition-colors">Explore Aptitude</a>
+        </div>
+
+        <!-- Web Dev Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-purple-600 flex items-center justify-center text-white text-xl mb-4"><i class="fa-solid fa-layer-group"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">Web Development</h3>
+            <p class="text-slate-400 text-sm mb-6">Build end-to-end modern web applications using HTML5, CSS3, JS, and React.</p>
+          </div>
+          <a href="WebDev/index.html" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-center text-xs font-semibold transition-colors">Explore Web Dev</a>
+        </div>
+
+        <!-- SQL Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-600 flex items-center justify-center text-white text-xl mb-4"><i class="fa-solid fa-database"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">SQL & Databases</h3>
+            <p class="text-slate-400 text-sm mb-6">Master enterprise schemas, complex JOIN operations, indexing, and optimization.</p>
+          </div>
+          <a href="SQL/index.html" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-center text-xs font-semibold transition-colors">Explore SQL</a>
+        </div>
+
+        <!-- Communication Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-600 flex items-center justify-center text-white text-xl mb-4"><i class="fa-solid fa-comments"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">Communication</h3>
+            <p class="text-slate-400 text-sm mb-6">Prepare for technical behavioral rounds, resume optimization, and HR interviews.</p>
+          </div>
+          <a href="Communication/index.html" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-indigo-600 text-white text-center text-xs font-semibold transition-colors">Explore Communication</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 4. GLOBAL FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-6 px-4 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+      <span>© Copyright Anikate Agrawal</span>
+      <a href="index.html" class="text-indigo-400 hover:text-indigo-300 font-medium">Return to Home Page</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

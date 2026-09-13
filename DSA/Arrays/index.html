@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays & Vectors - Beginner Coders Paradise</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col antialiased">
+
+  <!-- GLOBAL NAV BAR -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="../../index.html" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center font-black text-white text-xl">BCP</div>
+          <span class="font-bold text-lg text-white">Beginner Coders Paradise</span>
+        </a>
+
+        <nav class="hidden md:flex items-center space-x-1">
+          <a href="../../index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Home</a>
+          <a href="../index.html" class="px-3 py-2 rounded-lg text-sm font-medium text-indigo-400 bg-slate-800">DSA</a>
+          <a href="../../Aptitude/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Aptitude</a>
+          <a href="../../WebDev/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Web Development</a>
+          <a href="../../SQL/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">SQL</a>
+          <a href="../../Communication/index.html" class="px-3 py-2 rounded-lg text-sm text-slate-300 hover:bg-slate-800">Communication</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow py-8 max-w-5xl mx-auto px-4 w-full">
+    
+    <!-- TOP BREADCRUMB NAV -->
+    <div class="text-xs text-indigo-400 mb-2">
+      <a href="../index.html" class="hover:underline flex items-center gap-1">
+        <i class="fa-solid fa-arrow-left text-[10px]"></i> Back to DSA Modules
+      </a>
+    </div>
+
+    <!-- TOPIC HEADER -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-extrabold text-white">Arrays & Vectors</h1>
+      <p class="text-slate-400 text-sm mt-1">Master contiguous memory indexing, two-pointer techniques, dynamic resizing, and sliding windows.</p>
+    </div>
+
+    <!-- SUB-NAV TAB BAR (STICKY) -->
+    <div class="sticky top-16 z-40 bg-slate-950/95 border-b border-slate-800 mb-8 flex space-x-4">
+      <button onclick="switchTab('questions')" id="tab-questions" class="tab-btn py-3 px-4 font-semibold text-sm border-b-2 border-indigo-500 text-indigo-400 flex items-center gap-2">
+        <i class="fa-solid fa-clipboard-question"></i> Interview Questions
+      </button>
+      <button onclick="switchTab('notes')" id="tab-notes" class="tab-btn py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2">
+        <i class="fa-solid fa-file-lines"></i> Slides & Notes
+      </button>
+      <button onclick="switchTab('quizzes')" id="tab-quizzes" class="tab-btn py-3 px-4 font-semibold text-sm border-b-2 border-transparent text-slate-400 hover:text-white flex items-center gap-2">
+        <i class="fa-solid fa-vial"></i> Quizzes
+      </button>
+    </div>
+
+    <!-- TAB 1: INTERVIEW QUESTIONS ACCORDION -->
+    <div id="content-questions" class="tab-panel space-y-4">
+      <h3 class="text-lg font-bold text-white mb-2">Frequently Asked Interview Problems</h3>
+      
+      <!-- Question Item 1 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+        <button onclick="toggleAccordion('acc-1')" class="w-full p-4 text-left font-bold text-slate-200 flex justify-between items-center hover:bg-slate-800/50">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Easy</span>
+            <span>1. Two Sum Problem (Target Sum Pair)</span>
+          </div>
+          <i id="icon-acc-1" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+        </button>
+        <div id="acc-1" class="hidden p-5 border-t border-slate-800 bg-slate-950/60 text-sm text-slate-300">
+          <p class="mb-4">Given an array of integers <code class="bg-slate-800 px-1 py-0.5 rounded text-indigo-300">nums</code> and an integer <code class="bg-slate-800 px-1 py-0.5 rounded text-indigo-300">target</code>, return indices of the two numbers such that they add up to target.</p>
+          <div class="text-xs font-mono text-indigo-400 mb-1">Optimized Solution (O(n) Time, Hash Map):</div>
+          <pre class="bg-slate-900 p-4 rounded-lg border border-slate-800 text-emerald-400 font-mono text-xs overflow-x-auto">function twoSum(nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++) {
+    const diff = target - nums[i];
+    if (map.has(diff)) return [map.get(diff), i];
+    map.set(nums[i], i);
+  }
+}</pre>
+        </div>
+      </div>
+
+      <!-- Question Item 2 -->
+      <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden">
+        <button onclick="toggleAccordion('acc-2')" class="w-full p-4 text-left font-bold text-slate-200 flex justify-between items-center hover:bg-slate-800/50">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Medium</span>
+            <span>2. Maximum Subarray Sum (Kadane's Algorithm)</span>
+          </div>
+          <i id="icon-acc-2" class="fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
+        </button>
+        <div id="acc-2" class="hidden p-5 border-t border-slate-800 bg-slate-950/60 text-sm text-slate-300">
+          <p class="mb-4">Find the contiguous subarray with the largest sum and return its value.</p>
+          <pre class="bg-slate-900 p-4 rounded-lg border border-slate-800 text-emerald-400 font-mono text-xs overflow-x-auto">function maxSubArray(nums) {
+  let maxSoFar = nums[0], currentMax = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    currentMax = Math.max(nums[i], currentMax + nums[i]);
+    maxSoFar = Math.max(maxSoFar, currentMax);
+  }
+  return maxSoFar;
+}</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: SLIDES & NOTES -->
+    <div id="content-notes" class="tab-panel hidden space-y-6">
+      <div class="flex items-center justify-between bg-slate-900 p-4 rounded-xl border border-slate-800">
+        <div class="flex items-center gap-3">
+          <i class="fa-solid fa-file-pdf text-rose-500 text-2xl"></i>
+          <div>
+            <h4 class="text-sm font-bold text-white">Array Data Structure Notes.pdf</h4>
+            <p class="text-xs text-slate-400">PDF Guide • 1.8 MB</p>
+          </div>
+        </div>
+        <button onclick="alert('Downloading Array Notes PDF...')" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-semibold transition-colors flex items-center gap-2">
+          <i class="fa-solid fa-download"></i> Download Notes
+        </button>
+      </div>
+
+      <div class="bg-slate-900/60 p-6 rounded-xl border border-slate-800 space-y-4 text-slate-300 text-sm">
+        <h3 class="text-lg font-bold text-white">Array Complexity Quick Reference</h3>
+        <ul class="list-disc pl-5 space-y-2 text-xs">
+          <li><strong>Access by index:</strong> O(1) constant time complexity.</li>
+          <li><strong>Linear Search:</strong> O(n) worst-case time complexity.</li>
+          <li><strong>Insertion / Deletion:</strong> O(n) because elements must shift positions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TAB 3: QUIZZES -->
+    <div id="content-quizzes" class="tab-panel hidden max-w-2xl">
+      <div class="bg-slate-900 border border-slate-800 p-6 rounded-2xl space-y-6">
+        <div>
+          <h3 class="text-lg font-bold text-white">Array Fundamentals Assessment</h3>
+          <p class="text-xs text-slate-400">Answer the question below to test your understanding.</p>
+        </div>
+
+        <div class="space-y-3">
+          <p class="text-sm font-semibold text-slate-200">Q: What is the time complexity of looking up an element in an array by its index?</p>
+          <div class="space-y-2 text-xs">
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:bg-slate-800 cursor-pointer">
+              <input type="radio" name="quiz1" value="correct" class="accent-indigo-500">
+              <span>O(1)</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:bg-slate-800 cursor-pointer">
+              <input type="radio" name="quiz1" value="wrong" class="accent-indigo-500">
+              <span>O(n)</span>
+            </label>
+            <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-800 hover:bg-slate-800 cursor-pointer">
+              <input type="radio" name="quiz1" value="wrong" class="accent-indigo-500">
+              <span>O(log n)</span>
+            </label>
+          </div>
+        </div>
+
+        <button onclick="checkQuizAnswer()" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition-colors">
+          Submit Answer
+        </button>
+
+        <div id="quiz-result" class="hidden text-xs font-bold text-center p-3 rounded-lg"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- GLOBAL FOOTER -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-6 px-4 mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+      <span>© Copyright Anikate Agrawal</span>
+      <a href="../../index.html" class="text-indigo-400 hover:text-indigo-300 font-medium">Return to Home Page</a>
+    </div>
+  </footer>
+
+  <script>
+    // Tab switching logic
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(panel => panel.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('border-indigo-500', 'text-indigo-400');
+        btn.classList.add('border-transparent', 'text-slate-400');
+      });
+
+      document.getElementById('content-' + tabId).classList.remove('hidden');
+      const activeBtn = document.getElementById('tab-' + tabId);
+      activeBtn.classList.add('border-indigo-500', 'text-indigo-400');
+      activeBtn.classList.remove('border-transparent', 'text-slate-400');
+    }
+
+    // Accordion toggle logic
+    function toggleAccordion(id) {
+      const element = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      element.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+
+    // Quiz validation logic
+    function checkQuizAnswer() {
+      const selected = document.querySelector('input[name="quiz1"]:checked');
+      const result = document.getElementById('quiz-result');
+      result.classList.remove('hidden', 'bg-emerald-500/10', 'text-emerald-400', 'bg-rose-500/10', 'text-rose-400');
+      
+      if (selected && selected.value === 'correct') {
+        result.classList.add('bg-emerald-500/10', 'text-emerald-400');
+        result.textContent = 'Correct! Array indexing is constant time O(1).';
+      } else {
+        result.classList.add('bg-rose-500/10', 'text-rose-400');
+        result.textContent = 'Incorrect. Try again!';
+      }
+    }
+  </script>
+</body>
+</html>
